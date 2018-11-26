@@ -1,0 +1,31 @@
+{
+  "name": "jess-gallery-welgo-app",
+  "version": "1.0.0",
+  "description": "jess gallery website implemented using welgo framework",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "welgo",
+    "node.js",
+    "javascript",
+    "jess.gallery"
+  ],
+  "author": "Seva Zaikov <seva.zaikov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "query-string": "^6.1.0",
+    "request": "^2.87.0",
+    "welgo": "0.0.1-alpha-2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.39",
+    "@babel/preset-react": "^7.0.0-beta.39",
+    "@babel/register": "^7.0.0-beta.39",
+    "@babel/runtime": "^7.0.0-beta.39",
+    "nodemon": "^1.14.11"
+  }
+}
