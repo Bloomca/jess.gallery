@@ -2,17 +2,15 @@ const Welgo = require("welgo");
 const { stringify } = require("query-string");
 
 module.exports = class Link extends Welgo.Component {
-  constructor(props, context) {
-    super(props);
-    this.context = context;
+  resolveData({ req }) {
+    return { urlPath: req.path, urlQuery: req.query };
   }
   getQuery() {
-    const { query, withQuery } = this.props;
-    const { query: contextQuery } = this.context;
+    const { query, withQuery, urlQuery } = this.props;
 
     let stringifiedQuery = "";
     if (withQuery) {
-      stringifiedQuery = stringify(Object.assign({}, contextQuery, query));
+      stringifiedQuery = stringify(Object.assign({}, urlQuery, query));
     } else {
       stringifiedQuery = stringify(query);
     }
@@ -29,12 +27,11 @@ module.exports = class Link extends Welgo.Component {
     return "";
   }
   render() {
-    const { children, path, className } = this.props;
-    const { path: contextPath } = this.context;
+    const { children, path, urlPath, className } = this.props;
 
     let link = path;
     if (!path) {
-      link = contextPath;
+      link = urlPath;
     }
 
     return (

@@ -77,7 +77,7 @@ app.get("*", (req, res) => {
 
 async function renderPage({ PageComponent, res, req, props }) {
   try {
-    const page = await Welgo.render(<PageComponent {...props} />);
+    const page = await Welgo.render(<PageComponent {...props} />, { req });
     res.send(page);
   } catch (e) {
     console.log("something went wrong:", e);
