@@ -2,8 +2,6 @@ const Welgo = require("welgo");
 const Page = require("../components/page");
 const { getArticle } = require("../data/index");
 
-const styles = {};
-
 module.exports = class BlogPage extends Welgo.Component {
   async resolveData() {
     const article = await getArticle(this.props.id);
@@ -28,8 +26,6 @@ module.exports = class BlogPage extends Welgo.Component {
     );
   }
   render() {
-    const { article } = this.props;
-
     return <Page>{this.renderArticle()}</Page>;
   }
 };

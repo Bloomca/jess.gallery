@@ -265,7 +265,7 @@ p {
   margin: 10px;
 }
 
-.image-wrapper img {
+.image-wrapper img, .article-content img {
   cursor: zoom-in;
   max-width: 100% !important;
   max-height: 100%;
