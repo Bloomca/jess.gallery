@@ -63,7 +63,7 @@ app.get("/paint", (req, res) => {
     props: Object.assign(
       {
         type: "art",
-        title: "Drawing"
+        title: "Art"
       },
       req.query
     )
