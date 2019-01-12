@@ -3,7 +3,7 @@ const Welgo = require("welgo");
 module.exports = class Page extends Welgo.Component {
   resolveData({ req }) {
     return {
-      url: req.protocol + "://" + req.get("host") + req.originalUrl
+      url: req.protocol + "://" + req.get("host") + req.path
     };
   }
   render() {
