@@ -17,8 +17,12 @@ module.exports = class ArtPage extends Welgo.Component {
       return { tags, media };
     }
 
-    const tags = await getTags(type);
-    return { tags };
+    const [tags, media] = await Promise.all([
+      getTags(type),
+      getMedia({ type, page: page ? page - 1 : 0 })
+    ]);
+
+    return { tags, media };
   }
   renderBreadcrumbs() {
     const { tag, type, title } = this.props;
