@@ -50,6 +50,22 @@ module.exports.getMedia = ({ type, tags, page = 0 }) => {
   return getJSON(url);
 };
 
+module.exports.getPicture = ({ id }) => {
+  const url = formatURL({
+    url: `/v1/images/${id}`
+  });
+
+  return getJSON(url);
+};
+
+module.exports.getImageTags = ({ id }) => {
+  const url = formatURL({
+    url: `/v1/image_tags/${id}`
+  });
+
+  return getJSON(url);
+};
+
 function getJSON(url) {
   const fullURL = `${PREFIX}${url}`;
   console.log(fullURL);

@@ -10,6 +10,7 @@ const BlogPage = require("./pages/blog");
 const ArticlePage = require("./pages/article");
 const MediaPage = require("./pages/media");
 const MusicPage = require("./pages/music");
+const PicturePage = require("./pages/picture");
 const Page404 = require("./pages/404");
 
 const app = express();
@@ -67,6 +68,18 @@ app.get("/paint", (req, res) => {
       },
       req.query
     )
+  });
+});
+
+app.get("/media/:id", (req, res) => {
+  renderPage({
+    PageComponent: PicturePage,
+    res,
+    req,
+    props: {
+      query: req.query,
+      id: req.params.id
+    }
   });
 });
 
