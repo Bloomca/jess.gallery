@@ -541,3 +541,14 @@ p {
 .picture-text-container {
   margin-bottom: 40px;
 }
+
+.picture-back-link {
+  color: #fff;
+  text-decoration: underline;
+  margin: 0 auto;
+  width: 250px;
+  text-align: center;
+  font-size: 120%;
+  display: block;
+  padding-top: 15px;
+}

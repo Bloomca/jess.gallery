@@ -1,5 +1,6 @@
 const Welgo = require("welgo");
 const Page = require("../components/page");
+const Link = require("../components/link");
 const { getPicture } = require("../data/index");
 
 module.exports = class ArtPage extends Welgo.Component {
@@ -10,12 +11,20 @@ module.exports = class ArtPage extends Welgo.Component {
     return { picture };
   }
   render() {
-    const { picture } = this.props;
+    const {
+      picture,
+      query: { backLink }
+    } = this.props;
 
     return (
       <Page>
         <div>
           <div class="picture-image-container">
+            {backLink && (
+              <Link path={backLink} className="picture-back-link">
+                Back to the list
+              </Link>
+            )}
             <div class="picture-banner-container">
               <img
                 class="picture-banner"

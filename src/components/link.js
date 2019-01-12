@@ -27,7 +27,7 @@ module.exports = class Link extends Welgo.Component {
     return "";
   }
   render() {
-    const { children, path, urlPath, className } = this.props;
+    const { children, path, urlPath, className, style } = this.props;
 
     let link = path;
     if (!path) {
@@ -38,6 +38,7 @@ module.exports = class Link extends Welgo.Component {
       <a
         className={className || ""}
         href={`${link}${this.getQuery()}${this.getHash()}`}
+        style={style || ""}
       >
         {children}
       </a>

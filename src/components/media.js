@@ -4,6 +4,9 @@ const Link = require("./link");
 const RATIO_TRESHOLD = 5;
 
 module.exports = class Media extends Welgo.Component {
+  resolveData({ req }) {
+    return { backLink: req.url };
+  }
   renderPagination() {
     const { meta } = this.props;
 
@@ -58,8 +61,11 @@ module.exports = class Media extends Welgo.Component {
     return lines;
   }
   renderImage({ width, gap, picture }) {
+    const { backLink } = this.props;
     return (
-      <div
+      <Link
+        path={`/media/${picture.id}`}
+        query={{ backLink }}
         style={`width: calc(${width * 100}% - ${gap}px);`}
         className={"media-element"}
       >
@@ -68,7 +74,7 @@ module.exports = class Media extends Welgo.Component {
           src={picture.small_url}
           alt={picture.title}
         />
-      </div>
+      </Link>
     );
   }
   renderImages() {
