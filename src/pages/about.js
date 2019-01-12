@@ -8,10 +8,7 @@ module.exports = class AboutPage extends Welgo.Component {
       <Page>
         <div className={"container"}>
           <h1 className={"title"}>{"About"}</h1>
-          <img
-            className={"about-image"}
-            src={"https://static.jess.gallery/-cBvkx1gIDlAHMu__1200.jpg"}
-          />
+          <img className={"about-image"} src={"/about.jpg"} />
           <p>
             I've been a traditional artist for nearly as long as I've been a
             human being and have been a photographer since my teenage years when
