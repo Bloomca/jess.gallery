@@ -28,13 +28,17 @@ app.get("/art", (req, res) => {
   renderPage({ PageComponent: ArtPage, res, req });
 });
 
-app.get("/blog", (req, res) => {
+const renderBlog = (req, res) => {
   renderPage({ PageComponent: BlogPage, res, req });
-});
+};
+app.get("/blog", renderBlog);
+app.get("/travel", renderBlog);
 
-app.get("/blog/:id", (req, res) => {
+const renderBlogEntry = (req, res) => {
   renderPage({ PageComponent: ArticlePage, res, req, props: req.params });
-});
+};
+app.get("/blog/:id", renderBlogEntry);
+app.get("/travel/:id", renderBlogEntry);
 
 app.get("/photo", (req, res) => {
   renderPage({
