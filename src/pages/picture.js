@@ -4,10 +4,21 @@ const Link = require("../components/link");
 const { getPicture } = require("../data/index");
 
 module.exports = class ArtPage extends Welgo.Component {
-  async resolveData() {
+  async resolveData({ meta }) {
     const { id } = this.props;
 
     const picture = await getPicture({ id });
+
+    if (picture) {
+      const metaTitle = picture.meta_title || picture.title;
+      const metaDescription = picture.meta_description || picture.description;
+
+      meta.title = metaTitle;
+      meta.description = metaDescription;
+      meta.image = picture.big_url;
+      meta.keywords = picture.keywords;
+    }
+
     return { picture };
   }
   render() {

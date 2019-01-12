@@ -13,6 +13,8 @@ const MusicPage = require("./pages/music");
 const PicturePage = require("./pages/picture");
 const Page404 = require("./pages/404");
 
+const HTMLWrapper = require("./components/wrapper");
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -94,7 +96,14 @@ app.get("*", (req, res) => {
 
 async function renderPage({ PageComponent, res, req, props }) {
   try {
-    const page = await Welgo.render(<PageComponent {...props} />, { req });
+    const meta = {};
+    const body = await Welgo.render(<PageComponent {...props} />, {
+      req,
+      meta
+    });
+    const page = await Welgo.render(<HTMLWrapper body={body} meta={meta} />, {
+      req
+    });
     res.send(page);
   } catch (e) {
     console.log("something went wrong:", e);
