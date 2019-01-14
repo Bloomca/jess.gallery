@@ -6,18 +6,13 @@ const links = [
   "https://static.jess.gallery/OOPhohLIz_vUHHZS_1200.jpg"
 ];
 
-module.exports = class Slider extends Welgo.Component {
-  render() {
-    const sliderImages = links.map(link => (
-      <div
-        className={"slider-image"}
-        style={`background-image: url(${link})`}
-      />
-    ));
-    return (
-      <div data-slider className={"slider"}>
-        <div className={"slider-wrapper"}>{sliderImages}</div>
-      </div>
-    );
-  }
+module.exports = function Slider() {
+  const sliderImages = links.map(link => (
+    <div className={"slider-image"} style={`background-image: url(${link})`} />
+  ));
+  return (
+    <div data-slider className={"slider"}>
+      <div className={"slider-wrapper"}>{sliderImages}</div>
+    </div>
+  );
 };

@@ -4,66 +4,62 @@ const { getTags, getNestedTags, getMedia } = require("../data/index");
 const Tags = require("../components/tags");
 const Media = require("../components/media");
 
-module.exports = class ArtPage extends Welgo.Component {
-  async resolveData() {
-    const { tag, page, type } = this.props;
+module.exports = async function ArtPage(props) {
+  const { tags, media } = await resolveData(props);
 
-    if (tag) {
-      const [tags, media] = await Promise.all([
-        getNestedTags(tag),
-        getMedia({ type, tags: tag, page: page ? page - 1 : 0 })
-      ]);
+  return (
+    <Page>
+      <h1 className={"title"}>{getTitle({ ...props, tags })}</h1>
+      {renderBreadcrumbs(props)}
+      <Tags tag={props.tag} {...tags} />
+      <div id="pictures">{media && <Media {...media} />}</div>
+    </Page>
+  );
+};
 
-      return { tags, media };
-    }
-
+async function resolveData({ tag, page, type }) {
+  if (tag) {
     const [tags, media] = await Promise.all([
-      getTags(type),
-      getMedia({ type, page: page ? page - 1 : 0 })
+      getNestedTags(tag),
+      getMedia({ type, tags: tag, page: page ? page - 1 : 0 })
     ]);
 
     return { tags, media };
   }
-  renderBreadcrumbs() {
-    const { tag, type, title } = this.props;
 
-    if (tag) {
-      const link = type === "photo" ? "/photo" : "/paint";
-      return (
-        <div className={"back-wrapper"}>
-          <a className={"scroll-link"} href="#pictures">
-            Scroll to pictures
-          </a>
-          {" / "}
-          <a className={"back"} href={link}>
-            {`Back to all ${title.toLowerCase()}`}
-          </a>
-        </div>
-      );
-    }
-  }
-  getTitle() {
-    const { tag, tags, title } = this.props;
-    if (tag && tags && tags.entities) {
-      const tagObject = tags.entities[tag];
+  const [tags, media] = await Promise.all([
+    getTags(type),
+    getMedia({ type, page: page ? page - 1 : 0 })
+  ]);
 
-      if (tagObject && tagObject.name) {
-        return tagObject.name;
-      }
-    }
+  return { tags, media };
+}
 
-    return title;
-  }
-  render() {
-    const { tags, media, tag } = this.props;
-
+function renderBreadcrumbs({ tag, type, title }) {
+  if (tag) {
+    const link = type === "photo" ? "/photo" : "/paint";
     return (
-      <Page>
-        <h1 className={"title"}>{this.getTitle()}</h1>
-        {this.renderBreadcrumbs()}
-        <Tags tag={tag} {...tags} />
-        <div id="pictures">{media && <Media {...media} />}</div>
-      </Page>
+      <div className={"back-wrapper"}>
+        <a className={"scroll-link"} href="#pictures">
+          Scroll to pictures
+        </a>
+        {" / "}
+        <a className={"back"} href={link}>
+          {`Back to all ${title.toLowerCase()}`}
+        </a>
+      </div>
     );
   }
-};
+}
+
+function getTitle({ tag, tags, title }) {
+  if (tag && tags && tags.entities) {
+    const tagObject = tags.entities[tag];
+
+    if (tagObject && tagObject.name) {
+      return tagObject.name;
+    }
+  }
+
+  return title;
+}
