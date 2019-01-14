@@ -3,11 +3,16 @@ const Header = require("./header");
 const Footer = require("./footer");
 
 module.exports = function Page({ shadowHeader, children }) {
+  const style = {
+    display: "flex",
+    "flex-direction": "column",
+    height: "100%"
+  };
   return (
     <body>
-      <div style={"display: flex; flex-direction: column;height: 100%"}>
+      <div style={style}>
         {renderHeader({ shadowHeader })}
-        <div className={"content"}>{children}</div>
+        <div class={"content"}>{children}</div>
         <Footer />
         <script src="/index.js" />
       </div>
@@ -17,13 +22,13 @@ module.exports = function Page({ shadowHeader, children }) {
 
 function renderHeader({ shadowHeader }) {
   const header = (
-    <header className={`header`}>
+    <header class="header">
       <Header />
     </header>
   );
 
   if (shadowHeader) {
-    return <div className={"header__shadow"}>{header}</div>;
+    return <div class="header__shadow">{header}</div>;
   }
 
   return header;

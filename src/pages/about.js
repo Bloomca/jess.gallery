@@ -5,9 +5,9 @@ const ContactForm = require("../components/contactForm");
 module.exports = function AboutPage() {
   return (
     <Page>
-      <div className={"container"}>
-        <h1 className={"title"}>{"About"}</h1>
-        <img className={"about-image"} src={"/about.jpg"} />
+      <div class={"container"}>
+        <h1 class={"title"}>{"About"}</h1>
+        <img class={"about-image"} src={"/about.jpg"} />
         <p>
           I've been a traditional artist for nearly as long as I've been a human
           being and have been a photographer since my teenage years when I

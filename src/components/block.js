@@ -5,7 +5,7 @@ module.exports = function Block(props) {
     <a href={props.url}>
       <div
         className={"block-image"}
-        style={`background-image: url(${props.src})`}
+        style={{ "background-image": `url(${props.src})` }}
       />
       <h3>{props.title}</h3>
     </a>

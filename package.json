@@ -19,7 +19,7 @@
     "express": "^4.16.2",
     "query-string": "^6.1.0",
     "request": "^2.87.0",
-    "welgo": "0.0.1-alpha-3"
+    "welgo": "0.0.1-alpha-5"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.39",

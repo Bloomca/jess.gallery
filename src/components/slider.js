@@ -8,11 +8,14 @@ const links = [
 
 module.exports = function Slider() {
   const sliderImages = links.map(link => (
-    <div className={"slider-image"} style={`background-image: url(${link})`} />
+    <div
+      class={"slider-image"}
+      style={{ "background-image": `url(${link})` }}
+    />
   ));
   return (
-    <div data-slider className={"slider"}>
-      <div className={"slider-wrapper"}>{sliderImages}</div>
+    <div data-slider class={"slider"}>
+      <div class={"slider-wrapper"}>{sliderImages}</div>
     </div>
   );
 };

@@ -40,7 +40,7 @@ function Pagination({ meta }) {
     );
   }
 
-  return <div className={"pagination"}>{links}</div>;
+  return <div class={"pagination"}>{links}</div>;
 }
 
 function prepareLines({ images }) {
@@ -75,11 +75,11 @@ function Image({ width, gap, picture }, { req }) {
     <Link
       path={`/media/${picture.id}`}
       query={{ backLink }}
-      style={`width: calc(${width * 100}% - ${gap}px);`}
+      style={{ width: `calc(${width * 100}% - ${gap}px)` }}
       className={"media-element"}
     >
       <img
-        className={"media-element-image"}
+        class={"media-element-image"}
         src={picture.small_url}
         alt={picture.title}
       />

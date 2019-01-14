@@ -9,7 +9,7 @@ module.exports = async function ArtPage(props) {
 
   return (
     <Page>
-      <h1 className={"title"}>{getTitle({ ...props, tags })}</h1>
+      <h1 class={"title"}>{getTitle({ ...props, tags })}</h1>
       {renderBreadcrumbs(props)}
       <Tags tag={props.tag} {...tags} />
       <div id="pictures">{media && <Media {...media} />}</div>
@@ -39,12 +39,12 @@ function renderBreadcrumbs({ tag, type, title }) {
   if (tag) {
     const link = type === "photo" ? "/photo" : "/paint";
     return (
-      <div className={"back-wrapper"}>
-        <a className={"scroll-link"} href="#pictures">
+      <div class={"back-wrapper"}>
+        <a class={"scroll-link"} href="#pictures">
           Scroll to pictures
         </a>
         {" / "}
-        <a className={"back"} href={link}>
+        <a class={"back"} href={link}>
           {`Back to all ${title.toLowerCase()}`}
         </a>
       </div>

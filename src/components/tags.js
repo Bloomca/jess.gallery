@@ -8,7 +8,7 @@ module.exports = function Tags({ data, entities }) {
     const tagObject = entities[tag];
 
     return (
-      <li className={`block ${i > 5 ? "block__hidden" : ""}`}>
+      <li class={`block ${i > 5 ? "block__hidden" : ""}`}>
         <Block
           url={`?name=${tagObject.name}&tag=${tagObject.id}`}
           src={tagObject.cover || "/photo.webp"}
@@ -22,9 +22,9 @@ module.exports = function Tags({ data, entities }) {
     list.length > 6 ? <div id="show_more_tags">Show more</div> : null;
 
   return (
-    <div>
+    <Welgo.Fragment>
       {data && <ul className={"blocks"}>{blocksMarkup}</ul>}
       {showMoreTags}
-    </div>
+    </Welgo.Fragment>
   );
 };

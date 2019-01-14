@@ -5,21 +5,21 @@ const { getArticles } = require("../data/index");
 module.exports = async function BlogPages() {
   const articles = await getArticles();
   const articlesMarkup = articles.map(article => (
-    <a href={`/blog/${article.id}`} className={"blog-elem"}>
+    <a href={`/blog/${article.id}`} class={"blog-elem"}>
       <div
-        className={"blog-image"}
-        style={`background-image: url(${article.cover});`}
+        class={"blog-image"}
+        style={{ "background-image": `url(${article.cover});` }}
       />
-      <div className={"blog-thumbnail"}>
-        <h3 className={"blog-thumbnail-title"}>{article.title}</h3>
+      <div class={"blog-thumbnail"}>
+        <h3 class={"blog-thumbnail-title"}>{article.title}</h3>
         <div />
-        <h4 className={"blog-thumbnail-subtitle"}>{article.subtitle}</h4>
+        <h4 class={"blog-thumbnail-subtitle"}>{article.subtitle}</h4>
       </div>
     </a>
   ));
   return (
     <Page>
-      <h1 className={"title"}>{"Blog"}</h1>
+      <h1 class={"title"}>{"Blog"}</h1>
       <div class="blog-grid">{articlesMarkup}</div>
     </Page>
   );

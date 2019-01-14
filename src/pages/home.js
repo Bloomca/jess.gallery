@@ -6,10 +6,8 @@ module.exports = function HomePage() {
   return (
     <Page shadowHeader>
       <Slider />
-      <div>
-        <h1 className={"title title__homepage"}>{"Jess Zaikova"}</h1>
-        <h3 className={"subtitle"}>{"Artist"}</h3>
-      </div>
+      <h1 class={"title title__homepage"}>{"Jess Zaikova"}</h1>
+      <h3 class={"subtitle"}>{"Artist"}</h3>
     </Page>
   );
 };
