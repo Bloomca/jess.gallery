@@ -14,7 +14,7 @@ module.exports = function Slider() {
     />
   ));
   return (
-    <div data-slider class={"slider"}>
+    <div data-slider class={`slider`}>
       <div class={"slider-wrapper"}>{sliderImages}</div>
     </div>
   );

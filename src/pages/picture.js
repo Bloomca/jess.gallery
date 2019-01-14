@@ -3,6 +3,8 @@ const Page = require("../components/page");
 const Link = require("../components/link");
 const { getPicture } = require("../data/index");
 
+const styles = require("./picture.sass");
+
 module.exports = async function ArtPage({ id, query: { backLink } }, { meta }) {
   const picture = await getPicture({ id });
 
@@ -17,22 +19,22 @@ module.exports = async function ArtPage({ id, query: { backLink } }, { meta }) {
   }
   return (
     <Page>
-      <div class="picture-image-container">
+      <div class={styles.container}>
         {backLink && (
-          <Link path={backLink} className="picture-back-link">
+          <Link path={backLink} className={styles.backlink}>
             Back to the list
           </Link>
         )}
-        <div class="picture-banner-container">
+        <div class={styles.bannerContainer}>
           <img
-            class="picture-banner"
+            class={styles.banner}
             src={picture.big_url}
             alt={picture.title}
           />
         </div>
       </div>
-      <div class="container picture-text-container">
-        <h1 class="picture-title">{picture.title}</h1>
+      <div class={`container ${styles.text}`}>
+        <h1 class={styles.title}>{picture.title}</h1>
         <p>
           {picture.date}
           {" / "}

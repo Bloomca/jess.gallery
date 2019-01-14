@@ -1,6 +1,8 @@
 const Welgo = require("welgo");
 const Link = require("./link");
 
+const styles = require("./media.sass");
+
 const RATIO_TRESHOLD = 5;
 
 module.exports = function Media(props) {
@@ -8,7 +10,7 @@ module.exports = function Media(props) {
   const paginationMarkup = <Pagination meta={props.meta} />;
 
   return (
-    <div class={"media-elements"} id={"pictures"}>
+    <div class={styles.elements} id={"pictures"}>
       {paginationMarkup}
       {dataMarkup}
       {paginationMarkup}
@@ -76,13 +78,9 @@ function Image({ width, gap, picture }, { req }) {
       path={`/media/${picture.id}`}
       query={{ backLink }}
       style={{ width: `calc(${width * 100}% - ${gap}px)` }}
-      className={"media-element"}
+      className={styles.image}
     >
-      <img
-        class={"media-element-image"}
-        src={picture.small_url}
-        alt={picture.title}
-      />
+      <img class={styles.image} src={picture.small_url} alt={picture.title} />
     </Link>
   );
 }
@@ -98,6 +96,6 @@ function renderImages({ data }) {
       const gap = ((numberOfElements - 1) * 15) / numberOfElements;
       return <Image width={width} gap={gap} picture={picture} />;
     });
-    return <div className={"media-line"}>{elements}</div>;
+    return <div className={styles.line}>{elements}</div>;
   });
 }

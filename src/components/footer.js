@@ -1,8 +1,10 @@
 const Welgo = require("welgo");
 
+const styles = require("./footer.sass");
+
 module.exports = function Footer() {
   return (
-    <footer className={"footer"}>
+    <footer className={styles.footer}>
       <div>
         <a target="_blank" href="https://www.facebook.com/jesszaikova">
           {"Facebook"}
@@ -12,8 +14,8 @@ module.exports = function Footer() {
         </a>
         <a href="mailto:jess.zaikova@gmail.com">jess.zaikova@gmail.com</a>
       </div>
-      <div className={"footer-line"} />
-      <div className={"footer-copyright"}>
+      <div className={styles.footerLine} />
+      <div className={styles.footerCopyright}>
         © Jess Zaikova 1989–
         <script>{"document.write(new Date().getFullYear())"}</script>
       </div>

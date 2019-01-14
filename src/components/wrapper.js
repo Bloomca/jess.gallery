@@ -41,6 +41,7 @@ module.exports = function Page({ body, meta }, { req }) {
         <meta property="twitter:description" content={description} />
         {meta.image && <meta property="twitter:image" content={meta.image} />}
         <link rel={"stylesheet"} href="/styles.css" />
+        <link rel={"stylesheet"} href="/main.css" />
         <link
           href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic|PT+Sans+Caption:700,400|Source+Sans+Pro:400|Raleway:300"
           rel="stylesheet"
