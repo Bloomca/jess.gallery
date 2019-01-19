@@ -49,7 +49,7 @@ module.exports = function Page({ body, meta }, { req }) {
         />
         <Icons />
       </head>
-      {body}
+      <body dangerouslySetInnerHTML={{ __html: body }} />
     </html>
   );
 };

@@ -16,7 +16,10 @@ module.exports = async function BlogPage({ id }) {
             <h4 class={"article-subtitle"}>{article.subtitle}</h4>
           </div>
         </div>
-        <div class={"article-content"}>{article.text}</div>
+        <div
+          class={"article-content"}
+          dangerouslySetInnerHTML={{ __html: article.text }}
+        />
       </div>
     </Page>
   );
