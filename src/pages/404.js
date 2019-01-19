@@ -1,7 +1,8 @@
 const Welgo = require("welgo");
 const Page = require("../components/page");
 
-module.exports = function Page404() {
+module.exports = function Page404(props, context) {
+  context.statusCode = 404;
   return (
     <Page>
       <div class={"container"}>

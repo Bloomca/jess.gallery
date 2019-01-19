@@ -2,8 +2,25 @@ const Welgo = require("welgo");
 const Page = require("../components/page");
 const { getArticle } = require("../data/index");
 
-module.exports = async function BlogPage({ id }) {
+module.exports = async function BlogPage({ id }, context) {
   const article = await getArticle(id);
+  console.log(article);
+
+  if (!article || article.error) {
+    context.statusCode = 404;
+    return (
+      <Page>
+        <div class="container">
+          <h1>Article Not Found</h1>
+          <p>
+            Sorry, we could not find your article. See all{" "}
+            <a href="/blog">articles</a>.
+          </p>
+        </div>
+      </Page>
+    );
+  }
+
   return (
     <Page>
       <div id="article_content">
