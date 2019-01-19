@@ -97,13 +97,16 @@ app.get("*", (req, res) => {
 async function renderPage({ PageComponent, res, req, props }) {
   try {
     const meta = {};
-    const body = await Welgo.render(<PageComponent {...props} />, {
+    const resolvers = {
       req,
-      meta
-    });
+      meta,
+      statusCode: 200
+    };
+    const body = await Welgo.render(<PageComponent {...props} />, resolvers);
     const page = await Welgo.render(<HTMLWrapper body={body} meta={meta} />, {
       req
     });
+    res.statusCode = resolvers.statusCode;
     res.send(page);
   } catch (e) {
     console.log("something went wrong:", e);
