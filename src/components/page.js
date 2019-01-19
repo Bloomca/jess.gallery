@@ -9,14 +9,14 @@ module.exports = function Page({ shadowHeader, children }) {
     height: "100%"
   };
   return (
-    <body>
+    <>
       <div style={style}>
         {renderHeader({ shadowHeader })}
         <div class={"content"}>{children}</div>
         <Footer />
         <script src="/index.js" />
       </div>
-    </body>
+    </>
   );
 };
 
