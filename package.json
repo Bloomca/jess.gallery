@@ -20,7 +20,7 @@
     "express": "^4.16.2",
     "query-string": "^6.1.0",
     "request": "^2.87.0",
-    "welgo": "0.0.1-alpha-5"
+    "welgo": "^0.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -36,6 +36,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.4",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.2.1",
+    "weltest": "^0.1.0"
   }
 }
