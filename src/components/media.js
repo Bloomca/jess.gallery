@@ -28,6 +28,10 @@ function Pagination({ meta }) {
 
   const links = [];
 
+  if (numberOfPages === 1) {
+    return null;
+  }
+
   for (let i = 1; i <= numberOfPages; i++) {
     const activeClass = currentPage === i ? "pagination-link__active" : "";
     links.push(
@@ -87,6 +91,14 @@ function Image({ width, gap, picture }, { req }) {
 
 function renderImages({ data }) {
   const lines = prepareLines({ images: data });
+
+  if (lines.length === 0) {
+    return (
+      <>
+        <h2 class={styles.noImagesTitle}>Sorry, no images with this tag!</h2>
+      </>
+    );
+  }
 
   return lines.map(({ data, ratio }) => {
     const numberOfElements = data.length;
