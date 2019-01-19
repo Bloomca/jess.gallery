@@ -20,8 +20,6 @@ module.exports.getTags = type => {
     }
   });
 
-  console.log(url);
-
   return getJSON(url);
 };
 
@@ -68,7 +66,6 @@ module.exports.getImageTags = ({ id }) => {
 
 function getJSON(url) {
   const fullURL = `${PREFIX}${url}`;
-  console.log(fullURL);
   return new Promise((resolve, reject) => {
     request.get(fullURL, function(error, response, body) {
       if (error) {

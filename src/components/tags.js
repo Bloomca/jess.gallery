@@ -3,8 +3,6 @@ const Block = require("./block");
 
 const styles = require("./block.sass");
 
-console.log(styles);
-
 module.exports = function Tags({ data, entities }) {
   const list = data || [];
 
