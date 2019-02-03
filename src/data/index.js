@@ -3,6 +3,10 @@ const queryString = require("query-string");
 
 const PREFIX = "https://node-api.jess.gallery";
 
+module.exports.getSliderImages = () => {
+  return getJSON("/v1/slider_images");
+};
+
 module.exports.getArticles = () => {
   return getJSON("/v2/articles").then(result => result.data);
 };

@@ -1,12 +1,8 @@
 const Welgo = require("welgo");
+const { getSliderImages } = require("../data/index");
 
-const links = [
-  "https://static.jess.gallery/Tbk72s9VXHI9jqJD_1200.jpg",
-  "https://static.jess.gallery/tvDQQY5_DiUpSy2H_1200.jpg",
-  "https://static.jess.gallery/OOPhohLIz_vUHHZS_1200.jpg"
-];
-
-module.exports = function Slider() {
+module.exports = async function Slider() {
+  const links = await getSliderImages();
   const sliderImages = links.map(link => (
     <div
       class={"slider-image"}
