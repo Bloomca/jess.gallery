@@ -89,7 +89,7 @@ function Image({ width, gap, picture }, { req }) {
       style={{ width: `calc(${width * 100}% - ${gap}px)` }}
       className={styles.image}
     >
-      <img class={styles.image} src={picture.small_url} alt={picture.title} />
+      <img class={styles.image} src={picture.big_url} alt={picture.title} />
     </Link>
   );
 }
