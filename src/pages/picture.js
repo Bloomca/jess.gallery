@@ -35,6 +35,11 @@ module.exports = async function ArtPage(
   meta.description = metaDescription;
   meta.image = picture.big_url;
   meta.keywords = picture.keywords;
+
+  const type =
+    picture.original_width > picture.original_height
+      ? styles.horizontal
+      : styles.vertical;
   return (
     <Page>
       <div class={styles.container}>
@@ -43,7 +48,7 @@ module.exports = async function ArtPage(
             Back to the list
           </Link>
         )}
-        <div class={styles.bannerContainer}>
+        <div class={`${styles.bannerContainer} ${type}`}>
           <img
             class={styles.banner}
             src={picture.big_url}
