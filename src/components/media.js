@@ -72,6 +72,11 @@ function prepareLines({ images }) {
     }
   });
 
+  if (currentLine.data.length !== 0) {
+    currentLine.ratio = lineRatio;
+    lines.push(currentLine);
+  }
+
   return lines;
 }
 
