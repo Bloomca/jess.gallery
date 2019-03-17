@@ -6,7 +6,7 @@ module.exports = function Page({ shadowHeader, children }) {
   const style = {
     display: "flex",
     "flex-direction": "column",
-    height: "100%"
+    "min-height": "100vh"
   };
   return (
     <>

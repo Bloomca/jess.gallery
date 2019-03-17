@@ -10,7 +10,7 @@ module.exports = function Page({ body, meta }, { req }) {
     meta.keywords ||
     "jess zaikova, photos, travel, prague, usa, russia, czech republic, serbia, europe";
   return (
-    <html>
+    <html lang="en">
       <head>
         <title>{title}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

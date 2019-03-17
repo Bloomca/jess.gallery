@@ -107,7 +107,7 @@ async function renderPage({ PageComponent, res, req, props }) {
       req
     });
     res.statusCode = resolvers.statusCode;
-    res.send(page);
+    res.send("<!DOCTYPE html>" + page);
   } catch (e) {
     console.log("something went wrong:", e);
     res.status = 500;
