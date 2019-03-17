@@ -1,7 +1,7 @@
 const Welgo = require("welgo");
 
 module.exports = function Page({ body, meta }, { req }) {
-  const url = req.protocol + "://" + req.get("host") + req.path;
+  const url = req.protocol + "://" + "jess.gallery" + req.path;
   const title = meta.title || "Jess Zaikova Art";
   const description =
     meta.description ||
