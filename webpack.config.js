@@ -30,16 +30,12 @@ module.exports = {
         }
       },
       {
-        test: /.sass$/,
+        test: /\.css$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          "css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]",
-          {
-            loader: "sass-loader",
+          MiniCssExtractPlugin.loader, {
+            loader: 'css-loader',
             options: {
-              indentedSyntax: true
+              modules: false
             }
           }
         ]

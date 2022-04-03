@@ -1,18 +1,17 @@
 {
   "name": "jess-gallery-welgo-app",
   "version": "1.0.0",
-  "description": "jess gallery website implemented using welgo framework",
+  "description": "website implemented using welgo framework",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack & nodemon src/server.js",
+    "start": "webpack -c webpack.config.js & nodemon src/server.js",
     "build": "NODE_ENV=production webpack",
     "test": "jest"
   },
   "keywords": [
     "welgo",
     "node.js",
-    "javascript",
-    "jess.gallery"
+    "javascript"
   ],
   "author": "Seva Zaikov <seva.zaikov@gmail.com>",
   "license": "MIT",
@@ -28,15 +27,12 @@
     "@babel/register": "^7.0.0-beta.39",
     "@babel/runtime": "^7.0.0-beta.39",
     "babel-loader": "^8.0.5",
-    "css-loader": "^2.1.0",
+    "css-loader": "^6.7.1",
     "extract-text-webpack-plugin": "^3.0.2",
-    "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.11.0",
+    "mini-css-extract-plugin": "^2.6.0",
     "nodemon": "^1.14.11",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.28.4",
-    "webpack-cli": "^3.2.1",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2",
     "weltest": "^0.1.0"
   }
 }

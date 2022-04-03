@@ -1,0 +1,201 @@
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/components/footer.module.css ***!
+  \****************************************************************************************************************/
+.footer {
+  background: rgb(61, 155, 233);
+  padding: 15px 50px;
+  text-align: center;
+  color: #fff;
+}
+  
+  
+@media (max-width: 800px) {
+  .footer {
+    padding: 10px 30px;
+  } 
+}
+    
+
+@media (max-width: 500px) {
+  .footer {
+    padding: 5px 10px;
+  } 
+}
+   
+
+.footerLine {
+  height: 1px;
+  margin: 15px auto;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.1);
+}
+  
+
+.footer a {
+  display: inline-block;
+  text-decoration: underline;
+  color: #fff;
+  margin: 10px 15px 0;
+}
+  
+
+.footerCopyright {
+  color: #fff;
+  font-size: 90%;
+  margin: 15px auto;
+}
+  
+
+/*!***************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/components/block.module.css ***!
+  \***************************************************************************************************************/
+.block {
+  display: inline-block;
+  margin: 10px;
+}
+
+.blocks {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 964px;
+}
+  
+
+@media (max-width: 1000px) {
+  .blocks {
+    width: 100%;
+  }
+}
+    
+
+.blockImage {
+  width: 287px;
+  height: 287px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+  
+
+.block__hidden {
+  display: none;
+}
+/*!***************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/components/media.module.css ***!
+  \***************************************************************************************************************/
+.elements {
+  margin: 0 10px;
+}
+  
+
+.line {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  
+
+@media (max-width: 500px) {
+  .line {
+    flex-direction: column;
+  }
+}
+    
+
+.element {
+  display: inline-block;
+}
+  
+
+.image {
+  width: 100%;
+}
+  
+
+@media (max-width: 500px) {
+  .image {
+    width: 100%!important;
+    margin-bottom: 5px;
+  }
+}
+    
+.noImagesTitle {
+  text-align: center;
+}
+  
+/*!************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/pages/picture.module.css ***!
+  \************************************************************************************************************/
+.container {
+  background: #333;
+  position: relative;
+}
+  
+.bannerContainer {
+  max-width: calc(100vw - 120px);
+  height: 85vh;
+  margin: auto;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerContainer.vertical {
+  max-width: 95%;
+  height: 80vh;
+}
+  
+
+@media (max-width: 968px) {
+  .bannerContainer {
+    height: 60vh;
+  }
+}
+ 
+
+@media (max-width: 768px) {
+  .bannerContainer {
+    height: 55vh;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 430px) {
+  .bannerContainer {
+    height: 40vh;
+    max-width: 90%;
+  }
+
+  
+}    
+
+.banner {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  display: block;
+}
+  
+
+.text {
+  margin-bottom: 40px;
+}
+  
+    
+
+.backlink {
+  color: #fff;
+  text-decoration: underline;
+  margin: 0 auto;
+  width: 250px;
+  text-align: center;
+  font-size: 120%;
+  display: block;
+  padding-top: 15px;
+}
+  
+

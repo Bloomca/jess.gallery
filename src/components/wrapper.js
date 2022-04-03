@@ -1,14 +1,10 @@
 const Welgo = require("welgo");
 
 module.exports = function Page({ body, meta }, { req }) {
-  const url = "https://" + "jess.gallery" + req.path;
-  const title = meta.title || "Jess Zaikova Art";
-  const description =
-    meta.description ||
-    "Jess Zaikova art, photos, travel, travel blog, my music and craft. Order paint!";
-  const keywords =
-    meta.keywords ||
-    "jess zaikova, photos, travel, prague, usa, russia, czech republic, serbia, europe";
+  const url = "https://" + "photos.mymanymuses.com" + req.path;
+  const title = meta.title || "Photos | MyManyMuses";
+  const description = meta.description || "Photos by MyManyMuses";
+  const keywords = meta.keywords || "Photos by MyManyMuses";
   return (
     <html lang="en">
       <head>
@@ -17,13 +13,13 @@ module.exports = function Page({ body, meta }, { req }) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="copyright"
-          content={`Copyright ${new Date().getFullYear()} by Jess Zaikova`}
+          content={`Copyright ${new Date().getFullYear()} by MyManyMuses`}
         />
         <meta
           name="viewport"
           content="width=device-width,initial-scale=1,user-scalable=no"
         />
-        <meta name="author" content="Jess Zaikova" />
+        <meta name="author" content="MyManyMuses" />
         <meta name="keywords" content={keywords} />
         <meta name="description" content={description} />
 
@@ -33,13 +29,6 @@ module.exports = function Page({ body, meta }, { req }) {
         {meta.image && <meta property="og:image" content={meta.image} />}
         {meta.image && <meta property="og:image:type" content="image/jpeg" />}
 
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:site" content="@jesszaikova" />
-        <meta property="twitter:creator" content="@jesszaikova" />
-        <meta property="twitter:url" content={url} />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-        {meta.image && <meta property="twitter:image" content={meta.image} />}
         <link rel={"stylesheet"} href="/styles.css" />
         <link rel={"stylesheet"} href="/main.css" />
         <link

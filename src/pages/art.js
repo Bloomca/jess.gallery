@@ -2,7 +2,7 @@ const Welgo = require("welgo");
 const Page = require("../components/page");
 const Block = require("../components/block");
 
-const styles = require("../components/block.sass");
+const styles = require("../components/block.module.css");
 
 module.exports = function ArtPage() {
   return (

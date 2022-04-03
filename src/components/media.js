@@ -1,7 +1,7 @@
 const Welgo = require("welgo");
 const Link = require("./link");
 
-const styles = require("./media.sass");
+require('./media.module.css');
 
 const RATIO_TRESHOLD = 5;
 
@@ -10,7 +10,7 @@ module.exports = function Media(props) {
   const paginationMarkup = <Pagination meta={props.meta} />;
 
   return (
-    <div class={styles.elements} id={"pictures"}>
+    <div class='elements' id={"pictures"}>
       {paginationMarkup}
       {dataMarkup}
       {paginationMarkup}
@@ -87,9 +87,9 @@ function Image({ width, gap, picture }, { req }) {
       path={`/media/${picture.id}`}
       query={{ backLink }}
       style={{ width: `calc(${width * 100}% - ${gap}px)` }}
-      className={styles.image}
+      className='image'
     >
-      <img class={styles.image} src={picture.big_url} alt={picture.title} />
+      <img class='image' src={picture.big_url} alt={picture.title} />
     </Link>
   );
 }
@@ -100,7 +100,7 @@ function renderImages({ data }) {
   if (lines.length === 0) {
     return (
       <>
-        <h2 class={styles.noImagesTitle}>Sorry, no images with this tag!</h2>
+        <h2 class='noImagesTitle'>Sorry, no images with this tag!</h2>
       </>
     );
   }
@@ -113,6 +113,6 @@ function renderImages({ data }) {
       const gap = ((numberOfElements - 1) * 15) / numberOfElements;
       return <Image width={width} gap={gap} picture={picture} />;
     });
-    return <div className={styles.line}>{elements}</div>;
+    return <div className='line'>{elements}</div>;
   });
 }

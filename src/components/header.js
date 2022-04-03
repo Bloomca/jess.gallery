@@ -5,8 +5,7 @@ module.exports = function Header() {
     <Welgo.Fragment>
       <a href="/">{"Home"}</a>
       <a href="/art">{"Art"}</a>
-      <a href="/about">{"About"}</a>
-      <a href="/blog">{"Blog"}</a>
+      <a target="_blank" rel="noopener noreferrer" href="https://mymanymuses.com/about/">{"About"}</a>
     </Welgo.Fragment>
   );
 };

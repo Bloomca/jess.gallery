@@ -4,12 +4,8 @@ const express = require("express");
 const Welgo = require("welgo");
 
 const HomePage = require("./pages/home");
-const AboutPage = require("./pages/about");
 const ArtPage = require("./pages/art");
-const BlogPage = require("./pages/blog");
-const ArticlePage = require("./pages/article");
 const MediaPage = require("./pages/media");
-const MusicPage = require("./pages/music");
 const PicturePage = require("./pages/picture");
 const Page404 = require("./pages/404");
 
@@ -23,25 +19,9 @@ app.get("/", (req, res) => {
   renderPage({ PageComponent: HomePage, res, req });
 });
 
-app.get("/about", (req, res) => {
-  renderPage({ PageComponent: AboutPage, res, req });
-});
-
 app.get("/art", (req, res) => {
   renderPage({ PageComponent: ArtPage, res, req });
 });
-
-const renderBlog = (req, res) => {
-  renderPage({ PageComponent: BlogPage, res, req });
-};
-app.get("/blog", renderBlog);
-app.get("/travel", renderBlog);
-
-const renderBlogEntry = (req, res) => {
-  renderPage({ PageComponent: ArticlePage, res, req, props: req.params });
-};
-app.get("/blog/:id", renderBlogEntry);
-app.get("/travel/:id", renderBlogEntry);
 
 app.get("/photo", (req, res) => {
   renderPage({
@@ -58,21 +38,6 @@ app.get("/photo", (req, res) => {
   });
 });
 
-app.get("/paint", (req, res) => {
-  renderPage({
-    PageComponent: MediaPage,
-    res,
-    req,
-    props: Object.assign(
-      {
-        type: "art",
-        title: "Art"
-      },
-      req.query
-    )
-  });
-});
-
 app.get("/media/:id", (req, res) => {
   renderPage({
     PageComponent: PicturePage,
@@ -83,10 +48,6 @@ app.get("/media/:id", (req, res) => {
       id: req.params.id
     }
   });
-});
-
-app.get("/music", (req, res) => {
-  renderPage({ PageComponent: MusicPage, req, res });
 });
 
 app.get("*", (req, res) => {
@@ -118,9 +79,16 @@ async function renderPage({ PageComponent, res, req, props }) {
 const IS_PRODUCTION = process.env.production === "production";
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   if (!IS_PRODUCTION) {
     console.log("");
     console.log(`app is listening at http://localhost:${PORT}`);
   }
+});
+
+process.on('SIGTERM', function () {
+  server.close(function () {
+    console.log('shutting down server gracefully')
+    process.exit(0);
+  });
 });

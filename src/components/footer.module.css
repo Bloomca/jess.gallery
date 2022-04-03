@@ -1,0 +1,44 @@
+.footer {
+  background: rgb(61, 155, 233);
+  padding: 15px 50px;
+  text-align: center;
+  color: #fff;
+}
+  
+  
+@media (max-width: 800px) {
+  .footer {
+    padding: 10px 30px;
+  } 
+}
+    
+
+@media (max-width: 500px) {
+  .footer {
+    padding: 5px 10px;
+  } 
+}
+   
+
+.footerLine {
+  height: 1px;
+  margin: 15px auto;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.1);
+}
+  
+
+.footer a {
+  display: inline-block;
+  text-decoration: underline;
+  color: #fff;
+  margin: 10px 15px 0;
+}
+  
+
+.footerCopyright {
+  color: #fff;
+  font-size: 90%;
+  margin: 15px auto;
+}
+  

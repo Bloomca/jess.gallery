@@ -1,8 +1,6 @@
 const Welgo = require("welgo");
 const Block = require("./block");
 
-const styles = require("./block.sass");
-
 module.exports = function Tags({ data, entities }) {
   const list = data || [];
 
@@ -10,7 +8,7 @@ module.exports = function Tags({ data, entities }) {
     const tagObject = entities[tag];
 
     return (
-      <li class={`${styles.block} ${i > 5 ? "block__hidden" : ""}`}>
+      <li class={`block ${i > 5 ? "block__hidden" : ""}`}>
         <Block
           url={`?name=${tagObject.name}&tag=${tagObject.id}`}
           src={tagObject.cover || "/photo.webp"}
@@ -25,7 +23,7 @@ module.exports = function Tags({ data, entities }) {
 
   return (
     <Welgo.Fragment>
-      {data && <ul className={styles.blocks}>{blocksMarkup}</ul>}
+      {data && <ul className='blocks'>{blocksMarkup}</ul>}
       {showMoreTags}
     </Welgo.Fragment>
   );
